@@ -7,5 +7,5 @@ createRoot(document.getElementById('root')).render(
   <BrowserRouter> 
   <App/>
   </BrowserRouter>,
-  //use createBrowserrrrouterrrrrr
+  //can use createBrowserrrrouterrrrrr
 )
