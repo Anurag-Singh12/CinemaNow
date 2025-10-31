@@ -1,9 +1,12 @@
 import React from 'react'
+import HeroSection from '../Components/HeroSection'
+import FeaturedSection from '../Components/FeaturedSection'
 
 const Home = () => {
   return (
     <div>
-      home main page
+      <HeroSection/>
+      <FeaturedSection/>
     </div>
   )
 }

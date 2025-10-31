@@ -12,12 +12,14 @@
 @theme{
 
   --color-primary: #f84565; 
+  border-radius: 32px;
+/* background: linear-gradient(270deg, rgba(193, 18, 120, 0.70) 6.73%, rgba(193, 18, 120, 0.00) 100%), linear-gradient(180deg, rgba(17, 132, 239, 0.88) 71.15%, rgba(10, 76, 137, 0.88) 100%); */
   --color-primary-dull: #d63854;
 }
 
 body{
   color: white;
-  background-color: #1e1e1e;
+  background-color: #0f1014;
 }
 
 .navhover {
