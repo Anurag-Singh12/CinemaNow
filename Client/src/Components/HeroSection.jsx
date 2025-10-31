@@ -30,9 +30,9 @@ const HeroSection = () => {
         inherent belief in the goodness of humankind.
       </p>
       <button
-      onClick={()=>navigate('/movies')} className="flex items-center gap-1 px-6 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer">
+      onClick={()=>navigate('/movies')} className="flex items-center gap-1 px-6 py-3 text-sm bg-hero-gradient transition rounded-full font-medium cursor-pointer">
         Explore Movies
-        <ArrowRight className="w-5 h-5" />
+        <ArrowRight className="w-5 h-5 " />
       </button>
     </div>
   );

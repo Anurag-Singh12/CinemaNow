@@ -11,10 +11,19 @@
 
 @theme{
 
-  --color-primary: #f84565; 
+  --color-primary: rgba(69, 144, 248, 0.41);
+
+  /* --color-primary-dull: #d63854; */
+}
+
+.bg-hero-gradient {
   border-radius: 32px;
-/* background: linear-gradient(270deg, rgba(193, 18, 120, 0.70) 6.73%, rgba(193, 18, 120, 0.00) 100%), linear-gradient(180deg, rgba(17, 132, 239, 0.88) 71.15%, rgba(10, 76, 137, 0.88) 100%); */
-  --color-primary-dull: #d63854;
+background: linear-gradient(277deg, rgba(193, 18, 120, 0.77) 21.01%, rgba(193, 18, 120, 0.00) 73.97%), linear-gradient(0deg, rgba(17, 132, 239, 0.87) 0%, rgba(17, 132, 239, 0.87) 100%);
+}
+
+
+.blurcicle1{
+  fill: linear-gradient(180deg, rgba(17, 116, 212, 0.21) 37.12%, rgba(193, 18, 120, 0.21) 77.68%), linear-gradient(0deg, rgba(17, 132, 239, 0.41) 0%, rgba(17, 132, 239, 0.41) 100%);
 }
 
 body{
