@@ -36,3 +36,7 @@ body{
   @apply 
     hover:text-blue-300;
 }
+
+.noscrollbar{
+  scrollbar-width: none;
+}
