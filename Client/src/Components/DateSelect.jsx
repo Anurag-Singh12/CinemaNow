@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import BlurCircle from './BlurCircle'
-import { ChevronLeftIcon, ChevronsRightIcon } from 'lucide-react'
+import { ChevronLeftIcon, ChevronRightIcon} from 'lucide-react'
 import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,17 +28,19 @@ const DateSelect = ({dateTime,id}) => {
             <div className='flex items-center gap-6 text-sm mt-5'> 
                 <ChevronLeftIcon width={28}/>
                 <span  className='grid grid-cols-3 md:flex flex-wrap md:max-w-lg gap-4'>
-                    {Object.keys(dateTime).map((date)=>(
+
+                  {/* Object.keys(dateTime) converts the keys of the object (the date strings) into an array */}
+                    {Object.keys(dateTime).map((date)=>(              
                         <button 
                         onClick={()=> setSelected(date)}
                         key={date} 
-                        className={`flex flex-col items-center justify-center h-14 w-14 aspect-square rounded cursor-pointer ${selected === date ? "bg-primary text-white" : " border border-primary/70"}`}>
+                        className={`flex flex-col items-center justify-center h-14 w-14 aspect-square rounded cursor-pointer hover:bg-primary ${selected === date ? "bg-primary text-white" : " border border-primary/70"}`}>
                             <span>{new Date(date).getDate()}</span>
                             <span>{new Date(date).toLocaleDateString("en-US",{month: "short"})}</span>
                         </button>
                     ))}
                 </span>
-                <ChevronsRightIcon width={28}/>
+                <ChevronRightIcon width={28}/>
             </div>
         </div>
 

@@ -18,7 +18,7 @@ const MovieDetails = () => {
     if (show) {
       setShow({
         movie: show,                                                // The movie object from dummyShowsData matching the ID
-        dateTime: dummyDateTimeData,                               // Array or object with showtime/date data (dummyDateTimeData 
+        dateTime: dummyDateTimeData,                               // Array or object with showtime/date data (dummyDateTimeData)
       });
     }
   };
@@ -94,8 +94,8 @@ const MovieDetails = () => {
       </div>
 
       {/* Date Select */}
-
-      <DateSelect dateTime={show.dateTime} id={id} />
+      {/* It holds the state or data (show.dateTime, id) that it passes down sending using props to dateselect */}
+      <DateSelect dateTime={show.dateTime} id={id} /> 
 
       {/*Recommendations*/}
 
