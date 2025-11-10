@@ -120,6 +120,7 @@ const SeatLayout = () => {
           onClick={() => navigate("/my-bookings")}
           className="flex items-center gap-1 mt-20 px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer active:scale-95"
         >
+          {/* add confition for this to select date and seat */}
           Proceed To Checkout
           <ArrowRightIcon strokeWidth={3} className="w-4 h-4" />
         </button>
