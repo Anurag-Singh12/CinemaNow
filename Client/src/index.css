@@ -37,6 +37,17 @@ body{
     hover:text-blue-300;
 }
 
+/* To use as class in tailwind */
 .noscrollbar{
   scrollbar-width: none;
+}
+
+/* To remove arrow buttons in date/time selection*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }
