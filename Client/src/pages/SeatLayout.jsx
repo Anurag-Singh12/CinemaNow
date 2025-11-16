@@ -34,7 +34,7 @@ const SeatLayout = () => {
     }
   };
 
-  //ftn select seats/time/unselect
+  //ftn for select/unselect seats/time
   const handleSeatClick = (seatId) => {
     if (!selectedTime) {
       return toast.error("Select Time First");
@@ -42,19 +42,24 @@ const SeatLayout = () => {
     if (!selectedSeats.includes(seatId) && selectedSeats.length > 4) {
       return toast.error("You can only select 5 seats");
     }
+
+    //using ternary operator(or conditional rendering)
     setSelectedSeats((prev) =>
       prev.includes(seatId)
-        ? prev.filter((seat) => seat !== seatId)
-        : [...prev, seatId]
+        ? prev.filter((seat) => seat !== seatId)             //true
+        : [...prev, seatId]                                  //false
     );
   };
 
   //Renderseats
   const renderSeats = (row, count = 9) => (
-    <div key={row} className="flex gap-2 mt-2">
+    <div key={row} className="flex gap-2 mt-2">           {/*groups of all seat buttons */}
       <div className="flex flex-wrap items-center justify-center gap-2">
+
+        {/* Generating seat buttons dynamically */}
+
         {Array.from({ length: count }, (_, i) => {
-          const seatId = `${row}${i + 1}`;
+          const seatId = `${row}${i + 1}`;                //works dynamically - "A1","A2"
           return (
             <button
               key={seatId}
@@ -67,6 +72,7 @@ const SeatLayout = () => {
             </button>
           );
         })}
+        
       </div>
     </div>
   );
@@ -86,7 +92,7 @@ const SeatLayout = () => {
               key={item.time}
               onClick={() => setSelectedTime(item)}
               className={`flex items-center gap-2 px-6 py-2 w-max rounded-r-md cursor-pointer transition ${
-                selectedTime?.time === item.time
+                selectedTime?.time === item.time                                     //?. prevents errors if selection is null or undefined
                   ? "bg-primary text-white"
                   : "hover:bg-primary/20"
               }`}
@@ -111,7 +117,7 @@ const SeatLayout = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-11">
-            {groupRows.slice(1).map((group, idx) => (
+            {groupRows.slice(1).map((group, idx) => (                        //group-["C","D"].. and idx is the position for grp 0 for ["C","D"].. like that 
               <div key={idx}>{group.map((row) => renderSeats(row))}</div>
             ))}
           </div>
@@ -120,7 +126,7 @@ const SeatLayout = () => {
           onClick={() => navigate("/my-bookings")}
           className="flex items-center gap-1 mt-20 px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-full font-medium cursor-pointer active:scale-95"
         >
-          {/* add confition for this to select date and seat */}
+          {/* add condition for this to select date and seat in futureeeee.....(mandatory)*/}
           Proceed To Checkout
           <ArrowRightIcon strokeWidth={3} className="w-4 h-4" />
         </button>
