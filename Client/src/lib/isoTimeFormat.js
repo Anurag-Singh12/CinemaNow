@@ -8,6 +8,6 @@ const isoTimeFormat = (dateTime) => {
   return localTime;
 }
 
-console.log(isoTimeFormat("2025-11-16T15:45:00Z"));  // Output: "03:45 PM"
+//console.log(isoTimeFormat("2025-11-16T15:45:00Z"));  // Output: "03:45 PM"
 
 export default isoTimeFormat
