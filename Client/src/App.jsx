@@ -13,10 +13,14 @@ import Dashboard from "./pages/Admin/Dashboard";
 import AddShows from "./pages/Admin/AddShows";
 import ListShows from "./pages/Admin/ListShows";
 import ListBookings from "./pages/Admin/ListBookings";
+import { useAppContext } from "./context/AppContext";
+import { SignIn } from "@clerk/clerk-react";
 
 function App() {
   //To hide Navbar in admin page
   const isAdminRoute = useLocation().pathname.startsWith("/admin");
+
+  const { user } = useAppContext();
 
   return (
     <>
@@ -32,12 +36,23 @@ function App() {
         <Route path="/favorite" element={<Favorite />} />
 
         {/* Parent route -> /admin/dashboard */}
-        <Route path="/admin/*" element={<Layout />}>
+        <Route
+          path="/admin/*"
+          element={
+            user ? (
+              <Layout />
+            ) : (
+              <div className="min-h-screen flex justify-center items-center">
+                <SignIn fallbackRedirectUrl={"/admin"} />
+              </div>
+            )
+          }
+        >
           <Route index element={<Dashboard />} />
           {/* admin/add-shows etc */}
-          <Route path="add-shows" element={<AddShows/>} />
-          <Route path="list-shows" element= {<ListShows/>} />
-          <Route path="list-bookings" element= {<ListBookings/>} />
+          <Route path="add-shows" element={<AddShows />} />
+          <Route path="list-shows" element={<ListShows />} />
+          <Route path="list-bookings" element={<ListBookings />} />
         </Route>
       </Routes>
       {!isAdminRoute && <Footer />}
