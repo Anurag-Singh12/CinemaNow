@@ -15,6 +15,7 @@ import ListShows from "./pages/Admin/ListShows";
 import ListBookings from "./pages/Admin/ListBookings";
 import { useAppContext } from "./context/AppContext";
 import { SignIn } from "@clerk/clerk-react";
+import Loading from "./Components/Loading";
 
 function App() {
   //To hide Navbar in admin page
@@ -33,6 +34,7 @@ function App() {
         <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="/movies/:id/:date" element={<SeatLayout />} />
         <Route path="/my-bookings" element={<MyBookings />} />
+        <Route path="/loading/:nextUrl" element={<Loading />} />
         <Route path="/favorite" element={<Favorite />} />
 
         {/* Parent route -> /admin/dashboard */}
