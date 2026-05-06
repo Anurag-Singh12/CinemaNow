@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../../Components/Loading";
-import { dummyBookingData } from "../../assets/assets";
+// import { dummyBookingData } from "../../assets/assets";
 import Title from "../../Components/admin/Title";
 import dateFormat from "../../lib/dateFormat";
 import { useAppContext } from "../../context/AppContext";
@@ -17,7 +17,7 @@ const ListBookings = () => {
     // setBookings(dummyBookingData);
     // setIsLoading(false);
     try {
-      const { data } = await axios.get("/api/admin/all-bookings", {
+      const { data } = await axios.get("/api/admin/my-bookings", { //all-bookings
         headers: {
           Authorization: `Bearer ${await getToken()}`,
         },

@@ -88,6 +88,78 @@ export const addShow = async (req, res) => {
   }
 };
 
+// export const addShow = async (req, res) => {
+//   try {
+//     const { movieId, showsInput, showPrice } = req.body;
+
+//     let movie = await Movie.findById(movieId);
+
+//     // Create axios instance with timeout
+//     const api = axios.create({
+//       timeout: 5000,
+//       headers: {
+//         Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+//       },
+//     });
+
+//     if (!movie) {
+//       // ✅ Sequential calls (NO Promise.all)
+//       const movieDetailsResponse = await api.get(
+//         `https://api.themoviedb.org/3/movie/${movieId}`
+//       );
+
+//       const movieCreditsResponse = await api.get(
+//         `https://api.themoviedb.org/3/movie/${movieId}/credits`
+//       );
+
+//       const movieApiData = movieDetailsResponse.data;
+//       const movieCreditsData = movieCreditsResponse.data;
+
+//       const movieDetails = {
+//         _id: movieId,
+//         title: movieApiData.title,
+//         overview: movieApiData.overview,
+//         poster_path: movieApiData.poster_path,
+//         backdrop_path: movieApiData.backdrop_path,
+//         genres: movieApiData.genres,
+//         casts: movieCreditsData.cast,
+//         release_date: movieApiData.release_date,
+//         original_language: movieApiData.original_language,
+//         tagline: movieApiData.tagline || "",
+//         vote_average: movieApiData.vote_average,
+//         runtime: movieApiData.runtime,
+//       };
+
+//       movie = await Movie.create(movieDetails);
+//     }
+
+//     // ✅ FIXED showsInput handling (matches frontend)
+//     const showsToCreate = showsInput.map((show) => {
+//       const dateTimeString = `${show.date}T${show.time}`;
+
+//       return {
+//         movie: movieId,
+//         showDateTime: new Date(dateTimeString),
+//         showPrice,
+//         occupiedSeats: {},
+//       };
+//     });
+
+//     if (showsToCreate.length > 0) {
+//       await Show.insertMany(showsToCreate);
+//     }
+
+//     res.json({ success: true, message: "Show Added successfully." });
+//   } catch (error) {
+//     console.error("ADD SHOW ERROR:", error.response?.data || error.message);
+
+//     res.json({
+//       success: false,
+//       message: error.response?.data?.status_message || error.message,
+//     });
+//   }
+// };
+
 // API to get all shows from the database
 export const getShows = async (req, res) => {
   try {

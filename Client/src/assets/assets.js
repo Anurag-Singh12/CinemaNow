@@ -21,21 +21,33 @@ export const dummyTrailers = [
     videoUrl: "https://www.youtube.com/embed/5VYltuYGupU",
   },
   {
+    image: "https://img.youtube.com/vi/NHk7scrb_9I/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/NHk7scrb_9I",
+  },
+  {
     image:
       "https://i.ytimg.com/vi/uhUht6vAsMY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDcHGhAf6H5I9s8gOzmBNrdbBEMgA",
     videoUrl: "https://www.youtube.com/embed/uhUht6vAsMY",
+  },
+  {
+    image: "https://img.youtube.com/vi/DMD2uthghWE/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/DMD2uthghWE",
+  },
+  {
+    image: "https://img.youtube.com/vi/09M9_khkgRw/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/09M9_khkgRw",
   },
   {
     image: "https://img.youtube.com/vi/-sAOWhvheK8/maxresdefault.jpg",
     videoUrl: "https://www.youtube.com/embed/-sAOWhvheK8",
   },
   {
-    image: "https://img.youtube.com/vi/1pHDWnXmK7Y/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/1pHDWnXmK7Y",
+    image: "https://img.youtube.com/vi/D6sCbIv4N7Y/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/D6sCbIv4N7Y",
   },
   {
-    image: "https://img.youtube.com/vi/umiKiW4En9g/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/umiKiW4En9g",
+    image: "https://img.youtube.com/vi/gzUu-FJ7s-Y/maxresdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/gzUu-FJ7s-Y",
   },
 ];
 
