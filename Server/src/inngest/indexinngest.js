@@ -1,5 +1,5 @@
 import { Inngest } from "inngest";
-import { User } from "../Models/User.model.js";
+import { User } from "../Models/user.model.js";
 import { Booking } from "../Models/Booking.model.js";
 import { Show } from "../Models/Shows.model.js";
 import sendEmail from "../Db/nodeMailer.js";

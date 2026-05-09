@@ -1,6 +1,6 @@
 import { Booking } from "../Models/Booking.model.js";
 import { Show } from "../Models/Shows.model.js";
-import { User } from "../Models/User.model.js";
+import { User } from "../Models/user.model.js";
 
 // API to check if user is admin
 export const isAdmin = async (req, res) => {
