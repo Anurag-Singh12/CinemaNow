@@ -120,7 +120,8 @@ const AddShows = () => {
       <Title text1="Add" text2="shows" />
       <p className="mt-10 text-lg font-medium">Now Playing Movies</p>
       <div className="overflow-x-auto pb-4">
-        <div className="group flex flex-wrap gap-4 mt-4 w-max">
+        {/* <div className="group flex flex-wrap gap-4 mt-4 w-max"> */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-4">
           {nowPlayingMovies.map((movie) => (
             <div
               key={movie.id}
@@ -158,6 +159,7 @@ const AddShows = () => {
         </div>
       </div>
 
+     <div className="flex flex-wrap items-end gap-8 justify-center">
       {/* Inputs field for movie price */}
       <div className="mt-8">
         <label className="block text-sm font-medium mb-2">Show Price</label>
@@ -224,13 +226,17 @@ const AddShows = () => {
         </div>
       )}
 
-      <button
+      <div>
+        {/* <h2 className="mb-2">Add your show</h2> */}
+        <button
         onClick={handleSubmit}
         disabled={addingShow}
-        className="bg-primary text-white px-8 py-2 mt-6 rounded hover:bg-primary/90 transition-all cursor-pointer"
+        className="bg-primary text-white px-8 py-2 mt-2 rounded hover:bg-primary/90 transition-all cursor-pointer"
       >
         Add Show
       </button>
+      </div>
+</div>
     </>
   ) : (
     <Loading />
